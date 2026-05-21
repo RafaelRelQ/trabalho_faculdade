@@ -8,7 +8,7 @@ img.card:hover{
 
 }
 div#titulo {
-    width: 100vw;
+    width: 100%;
     font-size: medium;
     font-weight: lighter;
     margin-bottom:- 0px;
@@ -18,6 +18,188 @@ div#titulo {
     justify-content: space-between;
     gap: 20px;
     flex-wrap: nowrap;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div.overlaygpt {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+div.popupgpt{
+    background: white;
+    width: 600px;
+    height: 400px;
+    max-width: 90%;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+}
+
+    div.overlaynotion {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+div.popupnotion{
+    background: white;
+    width: 600px;
+    height: 400px;
+    max-width: 90%;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+}
+
+div.overlaymathway {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+div.popupmathway{
+    background: white;
+    width: 600px;
+    height: 400px;
+    max-width: 90%;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+}
+
+div.overlayjasper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+div.popupjasper{
+    background: white;
+    width: 600px;
+    height: 400px;
+    max-width: 90%;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+}
+
+div.overlaymidjourney {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+div.popupmidjourney{
+    background: white;
+    width: 600px;
+    height: 400px;
+    max-width: 90%;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+}
+
+div.overlayelevenlabs {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+div.popupelevenlabs{
+    background: white;
+    width: 600px;
+    height: 400px;
+    max-width: 90%;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
+}
+
+div.overlaygemini {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+div.popupgemini{
+    background: white;
+    width: 600px;
+    height: 400px;
+    max-width: 90%;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+    transition: 0.3s;
 }
 
 div.logo{
@@ -75,7 +257,7 @@ button.butt#adm {
 }
 
 #bar{
-    width: 30vw;
+    width: 600px;
     border: none;
     border-bottom: 2px solid black;
 }
@@ -91,8 +273,8 @@ button.butt#adm {
 }
 
 div#corpo{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -129,8 +311,8 @@ img.card{
         background-color: white;
         font-family: Arial, sans-serif;
         margin: 0;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         display: flex;
         justify-content: start;
         align-items: top;
@@ -138,7 +320,7 @@ img.card{
     }
     
     div#titulo {
-        width: 100vw;
+        width: 100%;
         font-size: large;
         font-weight: bold;
         margin-bottom:- 0px;
@@ -165,13 +347,19 @@ img.card{
 }
 
     #bar{
-        width: 10vw;
+        width: 10%;
         border: none;
         border-bottom: 2px solid black;
 }
     #bar:focus{
-        width: 20vw;
+        width: 20%;
         border: none;
         border-bottom: 2px solid black;
 }
+}
+
+img.popup{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
 }

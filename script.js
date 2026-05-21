@@ -4,79 +4,171 @@ const mathway = document.querySelector("#mathway");
 const jasper = document.querySelector("#jasper");
 const midjourney = document.querySelector("#midjourney");
 const elevenlabs = document.querySelector("#elevenlabs");
+const gemini = document.querySelector("#gemini");
 const adm = document.querySelector("#adm");
 const pesq = document.querySelector("#pesq");
 const calc = document.querySelector("#calc");
 const vend = document.querySelector("#vend");
 const outras = document.querySelector("#outras");
 const logo = document.querySelector(".logo");
+const bar = document.querySelector("#bar");
+const overlaygpt = document.querySelector(".overlaygpt");
+const popupgpt = document.querySelector(".popupgpt");
+const overlaynotion = document.querySelector(".overlaynotion");
+const popupnotion = document.querySelector(".popupnotion");
+const overlaymathway = document.querySelector(".overlaymathway");
+const popupmathway = document.querySelector(".popupmathway");
+const overlayjasper = document.querySelector(".overlayjasper");
+const popupjasper = document.querySelector(".popupjasper");
+const overlaymidjourney = document.querySelector(".overlaymidjourney");
+const popupmidjourney = document.querySelector(".popupmidjourney");
+const overlayelevenlabs = document.querySelector(".overlayelevenlabs");
+const popupelevenlabs = document.querySelector(".popupelevenlabs");
+const overlaygemini = document.querySelector(".overlaygemini");
+const popupgemini = document.querySelector(".popupgemini");
 
 logo.addEventListener("click", () => {
     window.open("index.html", "_self");
 });
 
 gpt.addEventListener("click", () => {
-    window.open("https://www.chatgpt.com", "_blank");
+
+    overlaygpt.style.display = "flex";
+
 });
 
+
+
+overlaygpt.addEventListener("click", () => {
+
+    overlaygpt.style.display = "none";
+
+});
+
+
+
+popupgpt.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+});
+
+
 notion.addEventListener("click", () => {
-    window.open("https://www.notion.com/pt/product/ai", "_blank");
+
+    overlaynotion.style.display = "flex";
+});
+
+overlaynotion.addEventListener("click", () => {
+    overlaynotion.style.display = "none";
+});
+
+popupnotion.addEventListener("click", (event) => {
+    event.stopPropagation();
 });
 
 mathway.addEventListener("click", () => {
-    window.open("https://www.mathway.com/pt", "_blank");
+
+    overlaymathway.style.display = "flex";
 });
 
+overlaymathway.addEventListener("click", () => {
+    overlaymathway.style.display = "none";
+});
+
+popupmathway.addEventListener("click", (event) => {
+    event.stopPropagation();
+}); 
+
 jasper.addEventListener("click", () => {
-    window.open("https://www.jasper.ai/", "_blank");
+
+    overlayjasper.style.display = "flex";
+});
+
+overlayjasper.addEventListener("click", () => {
+    overlayjasper.style.display = "none";
+}); 
+
+popupjasper.addEventListener("click", (event) => {
+    event.stopPropagation();
 });
 
 midjourney.addEventListener("click", () => {
-    window.open("https://www.midjourney.com", "_blank");
+
+    overlaymidjourney.style.display = "flex";
+});
+
+overlaymidjourney.addEventListener("click", () => {
+    overlaymidjourney.style.display = "none";
+});
+
+popupmidjourney.addEventListener("click", (event) => {
+    event.stopPropagation();
 });
 
 elevenlabs.addEventListener("click", () => {
-    window.open("https://www.elevenlabs.io/", "_blank");
+    overlayelevenlabs.style.display = "flex";
 });
 
-var administracao = [notion]
-var pesquisa = [gpt]
-var matematica = [mathway]
-var vendas = [jasper]
-var outros = [midjourney, elevenlabs]
+overlayelevenlabs.addEventListener("click", () => {
+    overlayelevenlabs.style.display = "none";
+});
 
-const cards = [gpt, notion, mathway, jasper, midjourney, elevenlabs];
+popupelevenlabs.addEventListener("click", (event) => {
+    event.stopPropagation();
+});
 
-function filtrar(lista) {
+gemini.addEventListener("click", () => {
+    overlaygemini.style.display = "flex";
+});
+
+overlaygemini.addEventListener("click", () => {
+    overlaygemini.style.display = "none";
+});
+
+popupgemini.addEventListener("click", (event) => {
+    event.stopPropagation();
+});
+
+const administracao = [notion];
+const pesquisa = [gpt, gemini];
+const calculo = [mathway];
+const vendas = [jasper];
+const outros = [midjourney, elevenlabs];
+
+const cards = [gpt, notion, mathway, jasper, midjourney, elevenlabs, gemini];
+
+function filtrarCards(categoria){
+
     cards.forEach(card => {
-        if (lista.includes(card)) {
-            card.classList.remove("hidden");
-        } else {
-            card.classList.add("hidden");
-        }    });
+        card.style.display = "none";
+    });
+
+    categoria.forEach(card => {
+        card.style.display = "";
+    });
+
 }
 
 adm.addEventListener("click", () => {
-    filtrar(administracao);
+    filtrarCards(administracao);
 });
 
 pesq.addEventListener("click", () => {
-    filtrar(pesquisa);
+    filtrarCards(pesquisa);
 });
 
 calc.addEventListener("click", () => {
-    filtrar(matematica);
+    filtrarCards(calculo);
 });
 
 vend.addEventListener("click", () => {
-    filtrar(vendas);
+    filtrarCards(vendas);
 });
 
 outras.addEventListener("click", () => {
-    filtrar(outros);
+    filtrarCards(outros);
 });
-
-const bar = document.querySelector("#bar");
 
 bar.addEventListener("input", () => {
 
@@ -85,11 +177,11 @@ bar.addEventListener("input", () => {
     cards.forEach(card => {
 
         if(card.id.toLowerCase().includes(valor)){
-            card.classList.remove("hidden");
+            card.style.display = "";
         }
 
         else{
-            card.classList.add("hidden");
+            card.style.display = "none";
         }
 
     });
